@@ -17,6 +17,10 @@
     <!-- Список заказов -->
     <div class="order-list" id="orderListContainer">
         <!-- Заказ 1 -->
+        @if (@Model.Orders.Count == 0)
+        {
+            <p class="text-center mt-3">Заказов не найдено</p>
+        }
         @foreach (var o in Model.Orders)
         {
             <div class="order-item" data-order-id="ORD-1024">
