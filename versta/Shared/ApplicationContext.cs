@@ -4,7 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace versta.Shared
 {
-
+    /// <summary>
+    /// Класс контекста подключения к БД: осуществляет запросы к БД.
+    /// </summary>
     public class ApplicationContext : DbContext
     {
 
@@ -23,10 +25,18 @@ namespace versta.Shared
                 throw new ArgumentException($"Ошибка подключения к базе данных: база данных недоступна.");
             }
         }
+        /// <summary>
+        /// Подключенеи к БД
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql($"Host={config_.dbHost};Port={config_.dbPort};Database={config_.dbName};Username={config_.dbUser};Password={config_.dbPass}");
         }
+        /// <summary>
+        /// Спецификация сущностей в БД
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 

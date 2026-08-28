@@ -1,5 +1,8 @@
 ﻿namespace versta.Models
 {
+    /// <summary>
+    /// DTO для Delivery
+    /// </summary>
     public record Delivery
     {
         public long CargoID { get; set; }
@@ -12,6 +15,7 @@
         public Order? Order{ get; set; }
         //Навигационое свойство
         public Endpoint? SenderEndpoint { get; set; }
+        //Навигационое свойство
         public Endpoint? RecipientEndpoint { get; set; }
         //Навигационое свойство
         public Cargo? Cargo{ get; set; }

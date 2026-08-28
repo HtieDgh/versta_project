@@ -10,6 +10,12 @@ namespace versta.Views
         public void OnGet()
         {
         }
+        /// <summary>
+        /// Получение списка заказов с учетом пагинации.
+        /// </summary>
+        /// <param name="db">Файл контекста базы данных</param>
+        /// <param name="skip">Сколько пропустить заказов</param>
+        /// <param name="take">Количество возвращаемых заказов</param>
         public void PopulateOrders(ApplicationContext db,int skip, int take)
         {
             Orders = db.Deliverys
@@ -28,20 +34,7 @@ namespace versta.Views
                 })
                 .Skip(skip).Take(take).ToList();
         }
-        public List<OrderReport> Orders=new();
-        public record OrderElement
-        {
-
-            public string SenderCity { get; set; } = string.Empty;
-
-            public string SenderAddress { get; set; } = string.Empty;
-
-            public string RecipientCity { get; set; } = string.Empty;
-
-            public string RecipientAddress { get; set; } = string.Empty;
-
-            public decimal Weight { get; set; } = 0.0m;
-            public DateOnly PickupDate { get; set; }
-        }
+        
+        public List<OrderReport> Orders=new();//Список заказов
     }
 }

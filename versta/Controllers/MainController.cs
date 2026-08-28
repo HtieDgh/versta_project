@@ -1,18 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Net;
-using System.Reflection.Metadata;
-using System.Runtime.CompilerServices;
 using versta.Models;
 using versta.Shared;
 using versta.Views;
 
 namespace versta.Controllers
 {
+    /// <summary>
+    /// Главный HTTP контроллер для страниц
+    /// </summary>
     [Route("/")]
     public class MainController : Controller
     {
-        private readonly IConfiguration configuration_;
-        private readonly DatabaseConfig dbConfig_;
+        private readonly IConfiguration configuration_;//Ссылка на builder.Configuration
+        private readonly DatabaseConfig dbConfig_;//Конфигурация подключения к БД
 
         public MainController(IConfiguration configuration)
         {
@@ -137,6 +137,5 @@ namespace versta.Controllers
 
             return Redirect("/orders/new");
         }
-        
     }
 }

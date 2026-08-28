@@ -1,5 +1,8 @@
 ﻿namespace versta.Models
 {
+    /// <summary>
+    /// DTO для отчета о заказе (включая его ID)
+    /// </summary>
     public record OrderReport
     {
         public long OrderID { get; set; }

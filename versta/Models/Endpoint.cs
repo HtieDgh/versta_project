@@ -1,5 +1,8 @@
 ﻿namespace versta.Models
 {
+    /// <summary>
+    /// DTO для Endpoint
+    /// </summary>
     public record Endpoint
     {
         public long ID { get; set; } = default;

@@ -4,7 +4,6 @@ namespace versta.Views
 {
     public class OrderFormViewModel
     {
-        public void OnGet() { }
         [Required(ErrorMessage = "Укажите город отправителя")]
         [Display(Name = "Город отправителя")]
         public string SenderCity { get; set; } = string.Empty;

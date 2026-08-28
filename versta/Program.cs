@@ -32,7 +32,6 @@ namespace versta
 
             app.UseAuthorization();
 
-
             app.MapControllers();
 
             app.Run();
