@@ -77,6 +77,9 @@ namespace versta.Controllers
                 ){
                     throw new ArgumentException("Адреса отправителя и получателя должны различаться");
                 }
+                if (vm.Weight < 0.1m && vm.Weight > 10000.0m)
+                    throw new ArgumentException("Вес не может быть меньше 0.1 и больше 10000");
+
                 //Проверка на существование отправителя и получателя
                 var existingSender = db.Endpoints.Where(e => e.City == vm.SenderCity && e.Address == vm.SenderAddress).FirstOrDefault();
                 var existingRecipient = db.Endpoints.Where(e => e.City == vm.RecipientCity && e.Address == vm.RecipientAddress).FirstOrDefault();

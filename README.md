@@ -25,11 +25,11 @@
 
 ## Подход реализации frontend части проекта
 
-Кандидату, согласно тексту задания, предлагается выбрать подход реализации frontend части проекта. Было принято решение использовать подход на основе ASP.NET Core MVC. Было принято использовать библиотеки **bootstrap** и **jquery**.
+Кандидату, согласно тексту задания, предлагается выбрать подход реализации frontend части проекта. Было принято решение использовать подход на основе ASP.NET Core MVC. Было принято решение использовать библиотеки **bootstrap** и **jquery**.
 
 ## База данных
 
-Схема базы данных и скрипт генерации представлен в каталоге `db/`. Структура представлена на рисунке ниже:
+В качестве базы данных было принято решение использовать **PostgreSQL 18.6**. Схема базы данных и скрипт генерации представлен в каталоге `/db/`. Структура представлена на рисунке ниже:
 
 ![ER-диаграмма](db/ER-диаграмма.png)
 
@@ -42,15 +42,15 @@
 * Microsoft.Extensions.PlatformAbstractions
 * Npgsql.EntityFrameworkCore.PostgreSQL
 
-Версия службы СУБД: postgresql-x64-18
 
 > [!IMPORTANT]
 > При разработке использовались внешние службы доставки (CDN) для некоторых статичных файлов. На запускаемой машине требуется подключение к интернету для корректного отображения фронта.
 
 Ссылки на внешние подключаемые файлы:
-* [Bootstrap Icons](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css)
-* [Плагин для jQuery - jQuery Validate](https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js)
-* [Дополнение к плагину - jQuery Unobtrusive Validation](https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js)
+* [Bootstrap Icons v1.11.3](https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css)
+* [Библиотека jQuery v3.6.0](https://code.jquery.com/jquery-3.6.0.min.js)
+* [Плагин для jQuery - jQuery Validate v1.19.3](https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js)
+* [Дополнение к плагину - jQuery Unobtrusive Validation v3.2.12](https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.js)
 
 
 ### Подключение к БД
